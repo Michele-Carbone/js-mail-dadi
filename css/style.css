@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+  
+body {
+    font-family: sans-serif;
+    text-align: center;
+    background-color: rgb(44, 177, 211);
+}
+
+header{
+    margin-top: 200px;
+}
+
+p{
+    margin-top: 20px;
+}

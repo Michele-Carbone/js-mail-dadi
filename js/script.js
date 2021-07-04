@@ -3,12 +3,6 @@ Chiedi all’utente la sua email,
 controlla che sia nella lista di chi può accedere,
 stampa un messaggio appropriato sull’esito del controllo.*/
 
-/*Gioco dei dadi
-Generare un numero random da 1 a 6, sia per il giocatore sia per
-il computer.
-Stabilire il vincitore, in base a chi fa il punteggio più alto e
-stampare il risultato.*/
-
 
 /*
 MAIL
@@ -19,6 +13,9 @@ MAIL
 5- stampa un messaggio appropriato sull’esito del controllo effettuato con l'esito
 6- in caso in cui la mail dovesse essere sbagliata dobbiano comunicare all'utente l'errore
 */
+
+
+var message = 'La mail inserità ';
 
 var listMail = [
     'eliana.rossi@gmail.com',
@@ -60,15 +57,24 @@ var listMail = [
 
 console.table(listMail);
 var accountMail = prompt('Inserisci la tua mail', 'giacomo.rossi@gmail.com');
+var flag = 'non è corretta'; //diamo questo valore negativo pke di partenza flag non troverà nessun valore
+var len = listMail.length;
 
+for (var i = 0; i < len; i++) {
 
+    if (accountMail == listMail[i]) {
+        flag = 'è corretta';//scrivendo la i all'interno del flag mi dirà esattamente in che posizione si troverà l elemento nella mia lista
 
-/*
-GIOCO DEI DADI
-1- Generare il primo numero random (indica il lancio casuale del dado)
-2- Generare il secondo numero random
-3- impostare il lancio random del dado con valore compreso da 1 a 6
-4- verificare se il primo numero è maggiore del secondo
-5- Stampare il risultanto facendolo vedere all'utente
+    }
+}
 
-*/
+if (flag) {
+
+    console.log('corrispondenza trovata');
+} else {
+    console.log('corrispondenza non trovata ');
+    alert('La mail inserita non non esiste. Si prega di aggiornare la pagine e Riprovare');
+}
+
+var list = document.getElementById('list-mail');
+list.innerHTML = message + flag;
